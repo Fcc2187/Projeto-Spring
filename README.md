@@ -19,4 +19,4 @@ Conceitos Aprendidos:
 <br>
 • Controller, service, repository
 <br>
-. Padrão DTO
+• Padrão DTO
