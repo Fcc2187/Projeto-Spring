@@ -19,6 +19,7 @@ public class Game {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
+    
     @Column(name = "game_year") //to avoid problems in the game database
     private Integer year;
     private String genre;
