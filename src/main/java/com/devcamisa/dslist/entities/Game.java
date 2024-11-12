@@ -23,17 +23,20 @@ public class Game {
     private Integer year;
     private String genre;
     private String platforms;
-    private double score;
+    private Double score;
     private String imgUrl;
+
+    @Column(columnDefinition = "TEXT") //to avoid problems in the game database
     private String shortDescription;
+
+    @Column(columnDefinition = "TEXT") //to avoid problems in the game database, because the long description is a large text
     private String longDescription;
 
     //Default constructor for the Game class
     public Game() {
     }
-
     //Constructor with all attributes for the Game class
-    public Game(long id, String title, Integer year, String genre, String platforms, double score, String imgUrl, String shortDescription, String longDescription) {
+    public Game(long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl, String shortDescription, String longDescription) {
         this.id = id;
         this.title = title;
         this.year = year;
@@ -86,11 +89,11 @@ public class Game {
         this.platforms = platforms;
     }
 
-    public double getScore() {
+    public Double getScore() {
         return score;
     }
 
-    public void setScore(double score) {
+    public void setScore(Double score) {
         this.score = score;
     }
 
