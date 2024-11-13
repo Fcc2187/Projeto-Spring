@@ -6,53 +6,56 @@ import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
-@Embeddable //Configuration to relate this class to the database
+@Embeddable //Encapsulates the game and id in this class
 public class BelongingPK {
 
     @ManyToOne
     @JoinColumn(name = "game_id")
     private Game game;
-    
+
     @ManyToOne
-    @JoinColumn(name = "gameList_id")
-    private GameList gameList;
+    @JoinColumn(name = "list_id")
+    private GameList list;
 
-    public BelongingPK(){
+    public BelongingPK() {
     }
 
-    public BelongingPK(Game game, GameList gameList){
+    public BelongingPK(Game game, GameList list) {
         this.game = game;
-        this.gameList = gameList;
+        this.list = list;
     }
-    public Game getGame(){
+
+    public Game getGame() {
         return game;
     }
-    public void setGame(Game game){
+
+    public void setGame(Game game) {
         this.game = game;
     }
-    public GameList getGameList(){
-        return gameList;
+
+    public GameList getList() {
+        return list;
     }
-    public void setGameList(GameList gameList){
-        this.gameList = gameList;
+
+    public void setList(GameList list) {
+        this.list = list;
     }
 
     @Override
-    public int hashCode(){
-        return Objects.hash(game, gameList);
+    public int hashCode() {
+        return Objects.hash(game, list);
     }
+
     @Override
-    public boolean equals(Object obj){
-        if(this == obj){
+    public boolean equals(Object obj) {
+        if (this == obj)
             return true;
-        }
-        if(obj == null){
+        if (obj == null)
             return false;
-        }
-        if(getClass()!=obj.getClass()){
+        if (getClass() != obj.getClass())
             return false;
-        }
         BelongingPK other = (BelongingPK) obj;
-        return Objects.equals(game,other.game)&& Objects.equals(gameList, other.gameList);
+        return Objects.equals(game, other.game) && Objects.equals(list, other.list);
     }
+    
 }
