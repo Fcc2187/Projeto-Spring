@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @RestController
 @RequestMapping(value = "/games")//Defines the base URL for the controller(simmilar to the views in Django)
 public class GameController {
-    @Autowired
+    @Autowired //Injects the dependency automatically
     private GameService gameService;
 
     //Method to handle GET requests to /games/{id}

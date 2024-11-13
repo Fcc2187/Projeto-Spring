@@ -20,7 +20,7 @@ public class GameDTO {
     }
 
     public GameDTO(Game entity){
-        BeanUtils.copyProperties(entity, this);//Mathod to copy some datas from entity to dto
+        BeanUtils.copyProperties(entity, this);//Method to copy some datas from entity to dto
     }
 
     public Long getId() {
