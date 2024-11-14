@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import com.devcamisa.dslist.dto.GameDTO;
 import com.devcamisa.dslist.dto.GameMinDTO;
 import com.devcamisa.dslist.entities.Game;
+import com.devcamisa.dslist.projections.GameMinProjection;
 
 @Service //Registering the class as a component to be injected in other classes
 public class GameService {
@@ -28,6 +29,13 @@ public class GameService {
     @Transactional(readOnly = true)
     public List<GameMinDTO> findAll() {
         List<Game> result = gameRepository.findAll(); //Returns a list of Game entities
+        return result.stream().map(x -> new GameMinDTO(x)).toList(); //Converts the list of Games entities to a list of GameMinDTO(Excluding some attributes)
+    }
+
+
+    @Transactional(readOnly = true)
+    public List<GameMinDTO> findByList(Long listId) {
+        List<GameMinProjection> result = gameRepository.searchByList(listId);
         return result.stream().map(x -> new GameMinDTO(x)).toList(); //Converts the list of Games entities to a list of GameMinDTO(Excluding some attributes)
     }
 }
