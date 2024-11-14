@@ -1,6 +1,7 @@
 package com.devcamisa.dslist.dto;
 
 import com.devcamisa.dslist.entities.Game;
+import com.devcamisa.dslist.projections.GameMinProjection;
 
 public class GameMinDTO {
     private Long id;
@@ -12,6 +13,7 @@ public class GameMinDTO {
     public GameMinDTO() {
     }
 
+
     //Don't need the parameters in this constructor and "this" cause the parameters are only used to create the entity'
     public GameMinDTO(Game entity) {
         id = entity.getId();
@@ -19,6 +21,14 @@ public class GameMinDTO {
         year = entity.getYear();
         imgUrl = entity.getImgUrl();
         shortDescription = entity.getShortDescription();
+    }
+
+    public GameMinDTO(GameMinProjection projection) {
+        id = projection.getId();
+        title = projection.getTitle();
+        year = projection.getGameYear();
+        imgUrl = projection.getImgUrl();
+        shortDescription = projection.getShortDescription();
     }
 
     // Getters

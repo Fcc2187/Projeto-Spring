@@ -1,3 +1,6 @@
+INSERT INTO tb_game_list (name) VALUES ('Aventura e RPG');
+INSERT INTO tb_game_list (name) VALUES ('Jogos de plataforma');
+
 INSERT INTO tb_game (title, score, game_year, genre, platforms, img_url, short_description, long_description) VALUES ('Mass Effect Trilogy', 4.8, 2012, 'Role-playing (RPG), Shooter', 'XBox, Playstation, PC', 'https://raw.githubusercontent.com/devsuperior/java-spring-dslist/main/resources/1.png', 'A thrilling journey through space where characters face powerful enemies and crucial decisions.', 'Join Commander Shepard and fight against an ancient threat to save humanity. Engage in breathtaking battles, make choices that matter, and uncover mysteries in this epic space saga.');
 INSERT INTO tb_game (title, score, game_year, genre, platforms, img_url, short_description, long_description) VALUES ('Red Dead Redemption 2', 4.7, 2018, 'Role-playing (RPG), Adventure', 'XBox, Playstation, PC', 'https://raw.githubusercontent.com/devsuperior/java-spring-dslist/main/resources/2.png', 'An open-world adventure set in the American frontier with stunning visuals and gripping storylines.', 'Step into the shoes of Arthur Morgan, an outlaw struggling with loyalty and survival. Experience the rich world, complex characters, and incredible landscapes of the Wild West in this acclaimed narrative-driven game.');
 INSERT INTO tb_game (title, score, game_year, genre, platforms, img_url, short_description, long_description) VALUES ('The Witcher 3: Wild Hunt', 4.7, 2014, 'Role-playing (RPG), Adventure', 'XBox, Playstation, PC', 'https://raw.githubusercontent.com/devsuperior/java-spring-dslist/main/resources/3.png', 'Embark on a monster-slaying quest in a breathtakingly detailed fantasy world.', 'Play as Geralt of Rivia, a professional monster hunter, in a journey full of choices and consequences. Encounter dangerous foes, magic, and hidden lore as you search for your adopted daughter in peril.');
@@ -8,3 +11,15 @@ INSERT INTO tb_game (title, score, game_year, genre, platforms, img_url, short_d
 INSERT INTO tb_game (title, score, game_year, genre, platforms, img_url, short_description, long_description) VALUES('Ori and the Blind Forest', 4, 2015, 'Platform', 'XBox, Playstation, PC', 'https://raw.githubusercontent.com/devsuperior/java-spring-dslist/main/resources/8.png', 'A heartwarming story of friendship and survival in a magical forest.', 'Guide Ori through a visually captivating world, solving puzzles, battling enemies, and unlocking abilities in a touching journey of courage and friendship.');
 INSERT INTO tb_game (title, score, game_year, genre, platforms, img_url, short_description, long_description) VALUES('Cuphead', 4.6, 2017, 'Platform', 'XBox, Playstation, PC', 'https://raw.githubusercontent.com/devsuperior/java-spring-dslist/main/resources/9.png', 'Classic animation meets intense action in a unique platformer.', 'Face off against incredible bosses in a game inspired by 1930s cartoons. Quick reflexes and a steady hand are your allies in this beautifully animated, challenging platformer.');
 INSERT INTO tb_game (title, score, game_year, genre, platforms, img_url, short_description, long_description) VALUES('Sonic CD', 4, 1993, 'Platform', 'Sega CD, PC', 'https://raw.githubusercontent.com/devsuperior/java-spring-dslist/main/resources/10.png', 'Sonic races through time to save the world from Dr. Robotnik.', 'Join Sonic as he travels through the past, present, and future to foil Dr. Robotnik’s plans. High-speed action, iconic music, and vibrant worlds await in this classic adventure.');
+
+INSERT INTO tb_belonging (list_id, game_id, position) VALUES (1, 1, 0);
+INSERT INTO tb_belonging (list_id, game_id, position) VALUES (1, 2, 1);
+INSERT INTO tb_belonging (list_id, game_id, position) VALUES (1, 3, 2);
+INSERT INTO tb_belonging (list_id, game_id, position) VALUES (1, 4, 3);
+INSERT INTO tb_belonging (list_id, game_id, position) VALUES (1, 5, 4);
+
+INSERT INTO tb_belonging (list_id, game_id, position) VALUES (2, 6, 0);
+INSERT INTO tb_belonging (list_id, game_id, position) VALUES (2, 7, 1);
+INSERT INTO tb_belonging (list_id, game_id, position) VALUES (2, 8, 2);
+INSERT INTO tb_belonging (list_id, game_id, position) VALUES (2, 9, 3);
+INSERT INTO tb_belonging (list_id, game_id, position) VALUES (2, 10, 4);
