@@ -21,3 +21,7 @@ Conceitos Aprendidos:
 <br>
 • Padrão DTO
 
+-------------------------------------------------------<br>
+Modelo de Domínio:
+
+![image](https://github.com/user-attachments/assets/b6d656ed-99b1-4c33-9470-e02e3cf041bb)
