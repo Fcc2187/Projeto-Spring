@@ -29,25 +29,21 @@ function fetchGamesFromList(listId) {
       data.forEach(game => {
         const li = document.createElement('li');
         
-        // Cria um link que irá redirecionar para a página de detalhes ao clicar
         const gameLink = document.createElement('a');
         gameLink.href = `game-details.html?gameId=${game.id}`;
 
-        // Cria a imagem do jogo e adiciona ao link
         const img = document.createElement('img');
         img.src = game.imgUrl;
-        img.alt = game.title; // Adiciona o título como alt na imagem
-        
-        // Adiciona o título ao jogo
+        img.alt = game.title; 
+    
         const title = document.createElement('span');
         title.textContent = game.title;
         
-        // Adiciona a imagem ao link
         gameLink.appendChild(img);
-        li.appendChild(gameLink);  // Adiciona o link (que contém a imagem) ao item da lista
-        li.appendChild(title);     // Adiciona o título do jogo
+        li.appendChild(gameLink);  
+        li.appendChild(title);     
 
-        gamesUl.appendChild(li);   // Adiciona o item da lista com o link e título
+        gamesUl.appendChild(li);   
       });
     });
 }
