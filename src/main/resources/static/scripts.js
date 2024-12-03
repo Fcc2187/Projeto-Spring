@@ -28,34 +28,38 @@ function fetchGamesFromList(listId) {
       gamesUl.innerHTML = '';
       data.forEach(game => {
         const li = document.createElement('li');
+        
+        // Cria um link que irá redirecionar para a página de detalhes ao clicar
+        const gameLink = document.createElement('a');
+        gameLink.href = `game-details.html?gameId=${game.id}`;
+
+        // Cria a imagem do jogo e adiciona ao link
         const img = document.createElement('img');
-        img.src = game.imgUrl; // Supondo que "imageUrl" está no DTO
+        img.src = game.imgUrl;
+        img.alt = game.title; // Adiciona o título como alt na imagem
+        
+        // Adiciona o título ao jogo
         const title = document.createElement('span');
-        title.textContent = game.title; // Supondo que "title" está no DTO
-        const button = document.createElement('button');
-        button.textContent = 'Detalhes';
-        button.onclick = () => showGameDetails(game.id);
-        li.appendChild(img);
-        li.appendChild(title);
-        li.appendChild(button);
-        gamesUl.appendChild(li);
+        title.textContent = game.title;
+        
+        // Adiciona a imagem ao link
+        gameLink.appendChild(img);
+        li.appendChild(gameLink);  // Adiciona o link (que contém a imagem) ao item da lista
+        li.appendChild(title);     // Adiciona o título do jogo
+
+        gamesUl.appendChild(li);   // Adiciona o item da lista com o link e título
       });
     });
 }
 
-// Função para redirecionar para a página de detalhes do jogo
-function showGameDetails(gameId) {
-  window.location.href = `game-details.html?gameId=${gameId}`;
-}
-
+// Função para buscar detalhes de um jogo
 function fetchGameDetails(gameId) {
   fetch(`${BASE_URL}/games/${gameId}`)
     .then(response => response.json())
     .then(data => {
       document.getElementById('gameImage').src = data.imgUrl;
       document.getElementById('gameTitle').textContent = data.title;
-      document.getElementById('gameDescription').textContent = data.description;
-      document.getElementById('gameReleaseDate').textContent = data.releaseDate;
-      document.getElementById('gameGenre').textContent = data.genre;
+      document.getElementById('gameDescription').textContent = data.shortDescription;
+      document.getElementById('gameReleaseDate').textContent = data.year;
     });
 }
